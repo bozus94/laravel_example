@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use App\Http\Requests\NoteRequest;
 use App\Http\Resources\NoteResource;
-use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -13,7 +12,7 @@ class NoteController extends Controller
 {
     public function index(): JsonResource
     {
-        return NoteResource::collection(Note::all());
+        return NoteResource::collection(Note::with('user:id,cname,email')->get());
     }
 
     public function store(NoteRequest $request): JsonResponse
@@ -37,6 +36,6 @@ class NoteController extends Controller
     {
         $note->delete();
 
-        return response()->json(['note' => $note, 'success' => true]);
+        return response()->json(['note' => $note, 'success' => true], 200);
     }
 }

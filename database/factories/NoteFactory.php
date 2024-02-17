@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Routing\Router;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Note>
@@ -17,7 +19,8 @@ class NoteFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(rand(1, 3)),
+            'title' => fake()->sentence(),
+            'user_id' => User::all()->random(),
             'content' => fake()->paragraph(rand(5, 8))
         ];
     }

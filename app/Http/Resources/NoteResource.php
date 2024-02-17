@@ -14,6 +14,7 @@ class NoteResource extends JsonResource
         return [
             "type" => "notes",
             "id" => $this->id,
+            "author" => $this->whenLoaded('user'),
             "attributes" => [
                 "title" => $this->title,
                 "content" => $this->content,

@@ -28,4 +28,9 @@ class Note extends Model
             "hour" => Carbon::parse($value)->format('H:i:s')
         ];
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

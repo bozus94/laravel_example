@@ -1,6 +1,10 @@
 <?php
 
+use App\Models\Note;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Helpers;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('testing', function () {
-    return fake()->sentence(rand(1, 3));
+    // return fake()->sentence(rand(1, 3));
+
+    return User::all()->random();
 });
