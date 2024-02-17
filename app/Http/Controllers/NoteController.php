@@ -12,7 +12,7 @@ class NoteController extends Controller
 {
     public function index(): JsonResource
     {
-        return NoteResource::collection(Note::with('user:id,cname,email')->get());
+        return NoteResource::collection(Note::with('user:id,name,email')->get());
     }
 
     public function store(NoteRequest $request): JsonResponse
