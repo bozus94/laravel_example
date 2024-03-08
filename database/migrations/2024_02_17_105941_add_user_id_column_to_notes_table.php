@@ -29,7 +29,7 @@ return new class extends Migration
             //$table->dropForeign('user_id');
             //$table->dropColumn('user_id');
 
-            $table->dropForeign(['user_id']);
+            $table->dropForeign(['notes_user_id_foreign']);
         });
     }
 };
