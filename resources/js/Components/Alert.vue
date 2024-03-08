@@ -4,7 +4,7 @@ defineProps({
     msg: String,
 });
 
-const emit = defineEmits("updateSuccessful");
+const emit = defineEmits(["updateSuccessful"]);
 
 const sendAlert = () => {
     emit("updateSuccessful", false);

@@ -20,9 +20,6 @@ const showingNavigationDropdown = ref(false);
             <nav
                 class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
             >
-            <nav
-                class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
-            >
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -37,13 +34,6 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div
-                                class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
-                            >
-                                <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
-                                >
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
@@ -95,7 +85,7 @@ const showingNavigationDropdown = ref(false);
                                             :href="route('logout')"
                                             method="post"
                                             as="button"
-                                        >
+                                        />
                                         <DropdownLink
                                             :href="route('profile.edit')"
                                         >
@@ -120,18 +110,8 @@ const showingNavigationDropdown = ref(false);
                                     showingNavigationDropdown =
                                         !showingNavigationDropdown
                                 "
-                                @click="
-                                    showingNavigationDropdown =
-                                        !showingNavigationDropdown
-                                "
                                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
                             >
-                                <svg
-                                    class="h-6 w-6"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
                                 <svg
                                     class="h-6 w-6"
                                     stroke="currentColor"
@@ -176,17 +156,9 @@ const showingNavigationDropdown = ref(false);
                         block: showingNavigationDropdown,
                         hidden: !showingNavigationDropdown,
                     }"
-                    :class="{
-                        block: showingNavigationDropdown,
-                        hidden: !showingNavigationDropdown,
-                    }"
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink
-                            :href="route('dashboard')"
-                            :active="route().current('dashboard')"
-                        >
                         <ResponsiveNavLink
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
@@ -199,17 +171,7 @@ const showingNavigationDropdown = ref(false);
                     <div
                         class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600"
                     >
-                    <div
-                        class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600"
-                    >
                         <div class="px-4">
-                            <div
-                                class="font-medium text-base text-gray-800 dark:text-gray-200"
-                            >
-                                {{ user.name }}
-                            </div>
-                            <div class="font-medium text-sm text-gray-500">
-                                {{ user.email }}
                             <div
                                 class="font-medium text-base text-gray-800 dark:text-gray-200"
                             >
@@ -229,14 +191,6 @@ const showingNavigationDropdown = ref(false);
                                 method="post"
                                 as="button"
                             >
-                            <ResponsiveNavLink :href="route('profile.edit')">
-                                Profile
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink
-                                :href="route('logout')"
-                                method="post"
-                                as="button"
-                            >
                                 Log Out
                             </ResponsiveNavLink>
                         </div>
@@ -244,10 +198,6 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </nav>
             <!-- Page Heading -->
-            <header
-                class="bg-white dark:bg-gray-800 shadow"
-                v-if="$slots.header"
-            >
             <header
                 class="bg-white dark:bg-gray-800 shadow"
                 v-if="$slots.header"
