@@ -4,7 +4,7 @@ import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 import { Link, useForm } from "@inertiajs/vue3";
-import { defineEmits, defineProps } from "vue";
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
     mustVerifyEmail: {

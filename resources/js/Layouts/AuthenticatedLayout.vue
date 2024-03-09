@@ -17,6 +17,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <!-- Page Menus -->
             <nav
                 class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
             >
@@ -43,6 +44,12 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    :href="route('testing')"
+                                    :active="route().current('testing')"
+                                >
+                                    Testing
+                                </NavLink>
                             </div>
                         </div>
 
@@ -56,7 +63,6 @@ const showingNavigationDropdown = ref(false);
                                                 type="button"
                                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {{ user.name }}
                                                 {{ user.name }}
 
                                                 <svg
@@ -76,16 +82,6 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink
-                                            :href="route('profile.edit')"
-                                        >
-                                            Profile
-                                        </DropdownLink>
-                                        <DropdownLink
-                                            :href="route('logout')"
-                                            method="post"
-                                            as="button"
-                                        />
                                         <DropdownLink
                                             :href="route('profile.edit')"
                                         >
@@ -165,6 +161,12 @@ const showingNavigationDropdown = ref(false);
                         >
                             Dashboard
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('testing')"
+                            :active="route().current('testing')"
+                        >
+                            Testing
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -197,6 +199,7 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </div>
             </nav>
+
             <!-- Page Heading -->
             <header
                 class="bg-white dark:bg-gray-800 shadow"
